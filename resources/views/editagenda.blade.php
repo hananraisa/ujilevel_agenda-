@@ -46,7 +46,7 @@
               </div>
               <div class="mb-3 col-6">
                 <label for="exampleInputEmail1" class="form-label">Jenis Pembelajaran</label>
-                <select class="form-select" name="jenispem"aria-label="Default select example">
+                <select class="form-select" name="jenispem" aria-label="Default select example">
                   <option selected>{{$data->jenispem}}</option>
                   <option value="1">Offline</option>
                   <option value="2">Online</option>
