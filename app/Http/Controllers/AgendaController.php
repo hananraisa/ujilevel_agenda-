@@ -34,7 +34,8 @@ class AgendaController extends Controller
     }
     public function updateagenda(Request $request, $id){
         $data = Agenda::find($id);
-
+        $data->update($request->all());
+        
         return redirect()->route('agenda');
     }
     public function deleteagenda($id){
