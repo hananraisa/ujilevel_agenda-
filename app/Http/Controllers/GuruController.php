@@ -11,7 +11,7 @@ class GuruController extends Controller
         return view('layout.main');
     }
     public function index(){
-
+        
         $data = Guru::all();
         return view('tampilguru', compact('data'));
     }

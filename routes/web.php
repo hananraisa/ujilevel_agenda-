@@ -40,6 +40,7 @@ Route::group(['middleware'=>['auth','hakakses:admin']], function(){
     Route::get('/guru', [GuruController::class,'index'])->name('guru');
 });
 
+
 //dashboard
 Route::get('/main', function () {
     $jumlahguru = Guru::count();
