@@ -12,7 +12,12 @@
             </div>
             <div class="mb-3">
               <label for="exampleInputPassword1" class="form-label">Wali Kelas</label>
-              <input type="text" name="walikelas" class="form-control" id="exampleInputPassword1">
+              <select class="form-select" name="guru_id">
+                <option selected>Select Guru</option>
+                @foreach($dataguru as $data)
+                    <option value="{{$data->id}}">{{$data->namaguru}}</option>
+                @endforeach
+              </select>
             </div>
             <button type="submit" class="btn btn-secondary">Save</button>
         </form>

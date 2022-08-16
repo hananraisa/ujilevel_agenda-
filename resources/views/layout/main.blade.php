@@ -212,6 +212,14 @@
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
+          @if (auth()->user()->role == 'user')
+          <li class="nav-item">
+            <a class="nav-link" href="/viewguru">
+              <i class="icon-grid menu-icon"></i>
+              <span class="menu-title">Guru</span>
+            </a>
+          </li>
+          @endif
           @if (auth()->user()->role == 'admin')
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">

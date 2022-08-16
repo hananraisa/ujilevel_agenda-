@@ -8,7 +8,6 @@
                 <tr>
                     <th scope="col">No</th>
                     <th scope="col">Username</th>
-                    <th scope="col">Password</th>
                     <th scope="col">Nama</th>
                     <th scope="col">Nik</th>
                     <th scope="col">Mata Pelajaran</th>
@@ -19,17 +18,16 @@
                 @php
                     $no = 1;
                 @endphp
-                @foreach($data as $row)
+                @foreach($data as $index => $row)
                 <tr>
                     <th scope="row">{{$no++}}</th>
-                    <td>{{$row->username}}</td>
-                    <td>{{$row->password}}</td>
-                    <td>{{$row->nama}}</td>
+                    <td>{{$row->email}}</td>
+                    <td>{{$row->namaguru}}</td>
                     <td>{{$row->nik}}</td>
                     <td>{{$row->mapel}}</td>
                     <td>
-                        <a href="/delete/{{$row->id}}" class="btn btn-warning">Delete</a>
-                        <a href="/editguru/{{$row->id}}" class="btn btn-success">Edit</a>
+                        <a href="/delete/{{$row->id_guru}}" class="btn btn-warning">Delete</a>
+                        <a href="/editguru/{{$row->id_guru}}" class="btn btn-success">Edit</a>
                     </td>
                 </tr>
                 @endforeach

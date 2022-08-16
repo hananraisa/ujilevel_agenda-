@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Guru;
 use App\Models\Kelas;
 use Illuminate\Http\Request;
 
@@ -12,11 +13,16 @@ class KelasController extends Controller
     }
     public function index(){
 
-        $data = Kelas::all();
-        return view('tampilkelas', compact('data'));
+        $datas = Kelas::select('kelas.*', 'gurus.*', 'kelas.id as id_kelas')
+		->leftJoin('gurus', 'kelas.guru_id', 'gurus.id')
+		->paginate(5);
+        return view('tampilkelas', compact('datas'));
     }
     public function tambahkelas(){
-        return view('tambahkelas');
+        $dataguru = Guru::all();
+        return view('tambahkelas',[
+            'dataguru' => $dataguru
+        ]);
     }
     public function insertdatakelas(request $request){        
         kelas::create($request->all());
@@ -24,9 +30,10 @@ class KelasController extends Controller
         return redirect()->route('kelas');
     }
     public function editkelas($id){
-        $data = Kelas::find($id);
+        $data = kelas::find($id);
+        $dataguru = Guru::all();
 
-        return view('editkelas', compact('data'));
+        return view('editkelas', compact('data', 'dataguru'));
     }
     public function updatekelas(Request $request, $id){
         $data = Kelas::find($id);

@@ -1,8 +1,9 @@
-@extends ('layout.main')
-@section ('content')
-    <div class="container">
-        <h1 class="text-center mb-4">TAMBAH DATA GURU</h1>
-        <form action="{{ route('insertdataagenda') }}" method="POST" enctype="multipart/form-data">
+@extends('layout.mainguru')
+
+@section('content')
+<div class="container">
+        <h1 class="text-center mb-4">TAMBAH DATA</h1>
+        <form action="{{ route('insertdataviewguru') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Nama Guru</label>

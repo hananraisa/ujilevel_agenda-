@@ -52,6 +52,7 @@ Route::get('/main', function () {
 
 
 // table guru
+Route::get('/guru', [GuruController::class,'index'])->name('guru')->middleware('auth');
 Route::get('/tambahguru', [GuruController::class,'tambahguru'])->name('tambahguru');
 Route::post('/insertdata', [GuruController::class,'insertdata'])->name ('insertdata');
 

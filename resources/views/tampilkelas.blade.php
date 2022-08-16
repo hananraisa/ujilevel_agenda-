@@ -16,14 +16,14 @@
                 @php
                     $no = 1;
                 @endphp
-            @foreach($data as $row)
+            @foreach($datas as $row)
                 <tr>
                     <th scope="row">{{$no++}}</th>
                     <td>{{$row->namakelas}}</td>
-                    <td>{{$row->walikelas}}</td>
+                    <td>{{$row->namaguru}}</td>
                     <td>
-                        <a href="/deletekelas/{{$row->id}}" class="btn btn-warning">Delete</a>
-                        <a type="button" href="/editkelas/{{$row->id}}" class="btn btn-success">Edit</a>
+                        <a href="/deletekelas/{{$row->id_kelas}}" class="btn btn-warning">Delete</a>
+                        <a type="button" href="/editkelas/{{$row->id_kelas}}" class="btn btn-success">Edit</a>
                     </td>
                 </tr>
                 @endforeach

@@ -10,4 +10,7 @@ class mapel extends Model
     use HasFactory;
 
     protected $fillable = ['mapel'];
+    public function mapelguru(){
+        return $this->hasMany(guru::class);
+    }
 }

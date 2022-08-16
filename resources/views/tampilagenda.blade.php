@@ -31,7 +31,7 @@
                     <td>{{$row->namaguru}}</td>
                     <td>{{$row->mapel}}</td>
                     <td>{{$row->materipel}}</td>
-                    <td>{{$row->kelas}}</td>
+                    <td>{{$row->namakelas}}</td>
                     <td>{{$row->absen}}</td>
                     <td>{{$row->jampel}}</td>
                     <td>{{$row->linkpem}}</td>
@@ -41,8 +41,8 @@
                     <td>{{$row->keterangan}}</td>
                     <td>{{$row->jenispem}}</td>
                     <td>
-                        <a href="/deleteagenda/{{$row->id}}" class="btn btn-warning">Delete</a>
-                        <a href="/editagenda/{{$row->id}}" class="btn btn-success">Edit</a>
+                        <a href="/deleteagenda/{{$row->id_agenda}}" class="btn btn-warning">Delete</a>
+                        <a href="/editagenda/{{$row->id_agenda}}" class="btn btn-success">Edit</a>
                     </td>
                 </tr>
                 @endforeach
